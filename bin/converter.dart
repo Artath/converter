@@ -7,7 +7,7 @@ import 'package:path/path.dart' as p;
 import 'dart:io';
 
 void main(List<String> arguments) async {
-  final sourcePath = p.join(Directory.current.path, 'assets', 'source.json');
+  final sourcePath = p.join(Directory.current.path, 'assets', 'en.json');
   final source = File(sourcePath);
   // final sourceContent = source.readAsStringSync();
   final enTrPath = p.join(Directory.current.path, 'assets', 'en_tr.txt');
@@ -25,7 +25,7 @@ void main(List<String> arguments) async {
   print(map.keys.length);
 
   var enTrString = map.values
-      .fold('', (previousValue, element) => '$previousValue\r$element');
+      .fold('', (previousValue, element) => '$previousValue\r"$element"');
   // var ruTrString = 'asd';
   var keysString =
       map.keys.fold('', (previousValue, element) => '$previousValue\r$element');
